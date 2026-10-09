@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brillo Joyería | Joyas Artesanales en Oro 18K, Plata 925 y Gemas</title>
+  
+  <!-- Tipografías elegantes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --bg-dark: #0a0806;
+      --bg-card: #15110d;
+      --bg-card-hover: #1f1a14;
+      --gold-primary: #f3a832;
+      --gold-light: #ffd778;
+      --gold-dark: #b87a14;
+      --ocre-accent: #cc7a18;
+      --silver-light: #e6e8fa;
+      --text-white: #fbf9f5;
+      --text-muted: #bcaba0;
+      --emerald-green: #00d084;
+      --ruby-red: #ff4d4d;
+      --sapphire-blue: #3b82f6;
+      --border-gold: rgba(243, 168, 50, 0.3);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-white);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3, .brand-font {
+      font-family: 'Cinzel', serif;
+    }
+
+    .gold-text-3d {
+      background: linear-gradient(135deg, #fff2aa 0%, #f3a832 30%, #ffd778 50%, #b87a14 75%, #f3a832 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0px 2px 10px rgba(243, 168, 50, 0.3);
+    }
+
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(10, 8, 6, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-gold);
+      padding: 12px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand-logo-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-logo-img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 2px solid var(--gold-primary);
+      object-fit: cover;
+      box-shadow: 0 0 10px rgba(243, 168, 50, 0.4);
+    }
+
+    .brand-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-white);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold-primary);
+    }
+
+    .btn-header-wa {
+      background: linear-gradient(135deg, #25d366, #128c7e);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 140px 5% 70px;
+      text-align: center;
+      background: radial-gradient(circle at center, rgba(204, 122, 24, 0.18) 0%, rgba(10, 8, 6, 1) 75%);
+    }
+
+    .hero-logo-large {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      border: 3px solid var(--gold-primary);
+      margin-bottom: 20px;
+      box-shadow: 0 0 25px rgba(243, 168, 50, 0.5);
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: 0 auto 30px;
+      color: var(--text-muted);
+      font-size: 1.1rem;
+    }
+
+    .hero-badges {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    .badge {
+      background: var(--bg-card);
+      border: 1px solid var(--border-gold);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      color: var(--gold-light);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Galería de Fotos Reales */
+    .gallery-section {
+      padding: 70px 5%;
+      background: var(--bg-dark);
+    }
+
+    .filter-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 35px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      background: var(--bg-card);
+      border: 1px solid var(--border-gold);
+      color: var(--text-white);
+      padding: 10px 22px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .filter-btn.active, .filter-btn:hover {
+      background: linear-gradient(135deg, var(--gold-primary), var(--ocre-accent));
+      color: #000;
+      border-color: var(--gold-light);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 25px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .gallery-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-gold);
+      border-radius: 15px;
+      overflow: hidden;
+      transition: 0.3s;
+      position: relative;
+    }
+
+    .gallery-card:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 10px 25px rgba(243, 168, 50, 0.25);
+    }
+
+    .gallery-img-wrapper {
+      position: relative;
+      width: 100%;
+      height: 260px;
+      background: #000;
+      overflow: hidden;
+    }
+
+    .gallery-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .gallery-card:hover .gallery-img-wrapper img {
+      transform: scale(1.08);
+    }
+
+    .gallery-tag {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: rgba(10, 8, 6, 0.85);
+      border: 1px solid var(--gold-primary);
+      color: var(--gold-light);
+      padding: 4px 12px;
+      border-radius: 15px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    .gallery-info {
+      padding: 20px;
+    }
+
+    .gallery-title {
+      font-size: 1.15rem;
+      margin-bottom: 8px;
+      color: var(--gold-light);
+    }
+
+    .gallery-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 15px;
+    }
+
+    .btn-card-wa {
+      width: 100%;
+      background: rgba(37, 211, 102, 0.15);
+      border: 1px solid #25d366;
+      color: #25d366;
+      padding: 10px;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      transition: 0.3s;
+      text-decoration: none;
+    }
+
+    .btn-card-wa:hover {
+      background: #25d366;
+      color: white;
+    }
+
+    /* Cotizador Interactivo */
+    .calculator-section {
+      padding: 70px 5%;
+      background: var(--bg-card);
+      border-top: 1px solid var(--border-gold);
+      border-bottom: 1px solid var(--border-gold);
+    }
+
+    .calculator-grid {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--bg-dark);
+      padding: 35px;
+      border-radius: 15px;
+      border: 1px solid var(--border-gold);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    .option-group {
+      margin-bottom: 25px;
+    }
+
+    .option-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: var(--gold-light);
+    }
+
+    .checkbox-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+    }
+
+    .custom-checkbox {
+      background: var(--bg-card);
+      border: 1px solid rgba(243, 168, 50, 0.25);
+      padding: 12px 15px;
+      border-radius: 10px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: 0.3s;
+    }
+
+    .custom-checkbox:hover {
+      border-color: var(--gold-primary);
+      background: var(--bg-card-hover);
+    }
+
+    .custom-checkbox input {
+      accent-color: var(--gold-primary);
+      width: 18px;
+      height: 18px;
+    }
+
+    .summary-box {
+      background: rgba(243, 168, 50, 0.08);
+      border: 1px dashed var(--gold-primary);
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 25px;
+    }
+
+    .btn-submit-wa {
+      width: 100%;
+      background: linear-gradient(135deg, #25d366, #128c7e);
+      color: white;
+      border: none;
+      padding: 16px;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin-top: 20px;
+      transition: 0.3s;
+    }
+
+    .btn-submit-wa:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+    }
+
+    /* Flotante WA */
+    .wa-float {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: #25d366;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 30px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+      z-index: 999;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .wa-float:hover {
+      transform: scale(1.1);
+    }
+
+    footer {
+      padding: 40px 5%;
+      text-align: center;
+      background: #050403;
+      border-top: 1px solid var(--border-gold);
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2rem; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navegación -->
+  <header>
+    <div class="brand-logo-container">
+      
+      <span class="brand-title gold-text-3d">BRILLO JOYERÍA</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#galeria">Catálogo Real</a></li>
+      <li><a href="#cotizador">Cotizador</a></li>
+    </ul>
+    <a href="https://wa.me/573022123031?text=Hola%20Brillo%20Joyer%C3%ADa,%20deseo%20m%C3%A1s%20informaci%C3%B3n" class="btn-header-wa" target="_blank">
+      <i class="fab fa-whatsapp"></i> 302 212 3031
+    </a>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <img src="img/imagen brillo joyeria.jpeg" class="hero-logo-large" alt="Brillo Joyería" onerror="this.src='https://via.placeholder.com/130/f3a832/000000?text=BJ'">
+    <h1 class="gold-text-3d">BRILLO JOYERÍA</h1>
+    <p>Manillas y Anillos Tejidos a Mano. Tejidos exclusivos con esferas de Oro 18K, Plata Ley 925 y Esmeraldas Naturales Garantizadas.</p>
+    
+    <div class="hero-badges">
+      <span class="badge"><i class="fas fa-gem" style="color:var(--emerald-green)"></i> Esmeralda Gema 100% Garantizada</span>
+      <span class="badge"><i class="fas fa-coins" style="color:var(--gold-primary)"></i> Oro 18 Kilates</span>
+      <span class="badge"><i class="fas fa-shield-alt" style="color:var(--silver-light)"></i> Plata Ley 925</span>
+    </div>
+  </section>
+
+  <!-- Galería de Trabajos Reales -->
+  <section class="gallery-section" id="galeria">
+    <h2 class="brand-font gold-text-3d" style="text-align: center; font-size: 2.2rem; margin-bottom: 10px;">Diseños de Creaciones Reales</h2>
+    <p style="text-align: center; color: var(--text-muted); margin-bottom: 30px;">Explora algunas de nuestras creaciones tejidas a mano. </p>
+
+    
+    
+
+    <!-- Rejilla de Tarjetas -->
+    <div class="gallery-grid">
+
+      <!-- Muestra 1: Manilla Esmeralda y Oro -->
+      <div class="gallery-card" data-category="manillas esmeraldas">
+  <div class="gallery-img-wrapper">
+    <span class="gallery-tag">Oro 18K + Rubí</span>
+    
+    <!-- Video reemplazando la foto -->
+    <video width="100%" height="100%" autoplay muted loop playsinline style="object-fit: cover; width: 100%; height: 260px; display: block;">
+      <source src="videos/1000087264.mp4" type="video/mp4">
+      Tu navegador no soporta el formato de video.
+    </video>
+    
+  </div>
+  <div class="gallery-info">
+    <h3 class="gallery-title">Manilla Tejido Plano</h3>
+    <p class="gallery-desc">Hilo chino rojo tejido, esferas de Oro 18K y esfera de rubí natural.</p>
+    <button class="btn-card-wa" onclick="cotizarProducto('Manilla Tejido Plano en Oro 18K y Rubí Natural')">
+      <i class="fab fa-whatsapp"></i> Cotizar Esta Manilla
+    </button>
+  </div>
+</div>
+
+      <!-- Muestra 2: Anillo Tejido en Oro -->
+      <div class="gallery-card" data-category="anillos">
+        <div class="gallery-img-wrapper">
+          <span class="gallery-tag">Manilla Tejido Plano</span>
+          <!-- Reemplaza la ruta 'src' con la foto real de tu Manilla -->
+          <img src="img/1000091734.jpg" alt="Manilla Tejido negro Oro 18K">
+        </div>
+        <div class="gallery-info">
+          <h3 class="gallery-title">Manilla Tejido Negro</h3>
+          <p class="gallery-desc">Manilla en tejido plano de alta resistencia con balines de Oro 18K de 3mm y rubí natural.</p>
+          <button class="btn-card-wa" onclick="cotizarProducto('Manilla Tejido Negro en Oro 18K')">
+            <i class="fab fa-whatsapp"></i> Cotizar Esta Manilla
+          </button>
+        </div>
+      </div>
+
+      <!-- Muestra 3: Manilla Combinada Oro y Esmeralda -->
+      <div class="gallery-card" data-category="manillas">
+        <div class="gallery-img-wrapper">
+          <span class="gallery-tag">Esmeralda + Oro 18K</span>
+          <!-- Reemplaza la ruta 'src' con la foto real -->
+          <video width="100%" height="100%" autoplay muted loop playsinline style="object-fit: cover; width: 100%; height: 260px; display: block;">
+      <source src="videos/pulseraesmeraldatejidoverde.mp4" type="video/mp4">
+      Tu navegador no soporta el formato de video.
+    </video>
+        </div>
+        <div class="gallery-info">
+          <h3 class="gallery-title">Manilla Dúo Elegance</h3>
+          <p class="gallery-desc">Combinación perfecta de esferas intercalados en Esmeralda y Oro 18K.</p>
+          <button class="btn-card-wa" onclick="cotizarProducto('Manilla Dúo Elegance combinada Esmeralda y Oro 18K')">
+            <i class="fab fa-whatsapp"></i> Cotizar Esta Manilla
+          </button>
+        </div>
+      </div>
+
+      <!-- Muestra 4: Anillo con Esmeralda y Rubíes -->
+      <div class="gallery-card" data-category="anillos esmeraldas">
+        <div class="gallery-img-wrapper">
+          <span class="gallery-tag">Gemas Especiales</span>
+          <!-- Reemplaza la ruta 'src' con la foto real -->
+          <img src="https://images.unsplash.com/photo-1603561591411-07134e71a2a9?auto=format&fit=crop&w=600&q=80" alt="Anillo Tejido Gemas">
+        </div>
+        <div class="gallery-info">
+          <h3 class="gallery-title">Anillo Esmeralda & Rubí</h3>
+          <p class="gallery-desc">Tejido fino con centro de esmeralda natural y neopreno/oro 18k.</p>
+          <button class="btn-card-wa" onclick="cotizarProducto('Anillo Tejido con centro de Esmeralda y Rubí')">
+            <i class="fab fa-whatsapp"></i> Cotizar Este Anillo
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Cotizador Interactivo -->
+  <section class="calculator-section" id="cotizador">
+    <h2 class="brand-font gold-text-3d" style="text-align: center; font-size: 2.2rem; margin-bottom: 10px;">Cotizador a la Medida</h2>
+    <p style="text-align: center; color: var(--text-muted); margin-bottom: 35px;">Selecciona la combinación que te gustaria armar:</p>
+
+    <div class="calculator-grid">
+      
+      <!-- 1. Tipo de Joya -->
+      <div class="option-group">
+        <label><i class="fas fa-ring"></i> 1. ¿Qué joya(s) deseas?:</label>
+        <div class="checkbox-grid">
+          <label class="custom-checkbox">
+            <input type="checkbox" name="joya" value="Manilla Tejida" checked onchange="actualizarCotizacion()">
+            <span>Manilla Tejida</span>
+          </label>
+          <label class="custom-checkbox">
+            <input type="checkbox" name="joya" value="Anillo Tejido" onchange="actualizarCotizacion()">
+            <span>Anillo Tejido</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- 2. Metales -->
+      <div class="option-group">
+        <label><i class="fas fa-cubes"></i> 2. Selección de Metales:</label>
+        <div class="checkbox-grid">
+          <label class="custom-checkbox">
+            <input type="checkbox" name="metal" value="Oro 18K" checked onchange="actualizarCotizacion()">
+            <span>Oro 18 Kilates</span>
+          </label>
+          <label class="custom-checkbox">
+            <input type="checkbox" name="metal" value="Plata Ley 925" onchange="actualizarCotizacion()">
+            <span>Plata Ley 925</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- 3. Gemas Preciosas -->
+      <div class="option-group">
+        <label><i class="fas fa-gem"></i> 3. Gemas Preciosas Naturales:</label>
+        <div class="checkbox-grid">
+          <label class="custom-checkbox">
+            <input type="checkbox" name="gema" value="Esmeralda Natural" checked onchange="actualizarCotizacion()">
+            <span style="color:var(--emerald-green)">Esmeraldas Naturales</span>
+          </label>
+          <label class="custom-checkbox">
+            <input type="checkbox" name="gema" value="Rubí Natural" onchange="actualizarCotizacion()">
+            <span style="color:var(--ruby-red)">Rubíes</span>
+          </label>
+          <label class="custom-checkbox">
+            <input type="checkbox" name="gema" value="Zafiro Natural" onchange="actualizarCotizacion()">
+            <span style="color:var(--sapphire-blue)">Zafiros</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Resumen -->
+      <div class="summary-box">
+        <h3 class="brand-font gold-text-3d" style="margin-bottom: 10px;">Resumen de tu Diseño</h3>
+        <p id="resumen-texto" style="color: var(--text-muted); font-size: 0.95rem;">Cargando selección...</p>
+      </div>
+
+      <button class="btn-submit-wa" onclick="enviarWhatsApp()">
+        <i class="fab fa-whatsapp" style="font-size: 1.4rem;"></i> Cotizar Este Diseño por WhatsApp
+      </button>
+
+    </div>
+  </section>
+
+  <!-- Botón Flotante -->
+  <a href="https://wa.me/573022123031?text=Hola%20Brillo%20Joyer%C3%ADa,%20deseo%20cotizar%20unas%20joyas" class="wa-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- Footer -->
+  <footer>
+    <h3 class="gold-text-3d" style="margin-bottom: 10px;">BRILLO JOYERÍA</h3>
+    <p>Calidad y Autenticidad Garantizada • Oro 18K • Plata 925 • Gemas Certificadas</p>
+    <p style="margin-top: 15px; font-size: 0.85rem;">&copy; 2026 Brillo Joyería • Contacto directo: +57 302 212 3031</p>
+  </footer>
+
+  <script>
+    // Filtro de Galería
+    function filtrarGaleria(categoria, elemento) {
+      const tarjetas = document.querySelectorAll('.gallery-card');
+      const botones = document.querySelectorAll('.filter-btn');
+
+      botones.forEach(btn => btn.classList.remove('active'));
+      elemento.classList.add('active');
+
+      tarjetas.forEach(tarjeta => {
+        const categoriasTarjeta = tarjeta.getAttribute('data-category');
+        if (categoria === 'todos' || categoriasTarjeta.includes(categoria)) {
+          tarjeta.style.display = 'block';
+        } else {
+          tarjeta.style.display = 'none';
+        }
+      });
+    }
+
+    // Cotizar Producto Específico desde la Galería
+    function cotizarProducto(nombreProducto) {
+      const mensaje = `Hola Brillo Joyería! ✨ Me gustó mucho esta joya de su catálogo real y deseo cotizarla:%0A%0A` +
+                      `💎 *Producto:* ${nombreProducto}%0A%0A` +
+                      `Quedo atento a la información de precios y tiempo de entrega. ¡Muchas gracias!`;
+      window.open(`https://wa.me/573022123031?text=${mensaje}`, '_blank');
+    }
+
+    // Funciones del Cotizador
+    function obtenerSeleccionados(nombre) {
+      const checkboxes = document.querySelectorAll(`input[name="${nombre}"]:checked`);
+      return Array.from(checkboxes).map(cb => cb.value);
+    }
+
+    function actualizarCotizacion() {
+      const joyas = obtenerSeleccionados('joya');
+      const metales = obtenerSeleccionados('metal');
+      const gemas = obtenerSeleccionados('gema');
+
+      const textoJoya = joyas.length > 0 ? joyas.join(', ') : 'Ninguna seleccionada';
+      const textoMetal = metales.length > 0 ? metales.join(' + ') : 'Ninguno seleccionado';
+      const textoGema = gemas.length > 0 ? gemas.join(', ') : 'Sin gemas';
+
+      const resumen = `• Joyas: ${textoJoya}\n• Metales: ${textoMetal}\n• Gemas: ${textoGema}`;
+      document.getElementById('resumen-texto').innerText = resumen;
+    }
+
+    function enviarWhatsApp() {
+      const joyas = obtenerSeleccionados('joya').join(', ');
+      const metales = obtenerSeleccionados('metal').join(' + ');
+      const gemas = obtenerSeleccionados('gema').join(', ');
+
+      const mensaje = `Hola Brillo Joyería! ✨ Deseo cotizar la siguiente combinación de joyas personalizadas:%0A%0A` +
+                      `💎 *Tipo de Joya(s):* ${joyas || 'Sin especificar'}%0A` +
+                      `🏆 *Metales Nobles:* ${metales || 'Sin especificar'}%0A` +
+                      `🌟 *Gemas Preciosas:* ${gemas || 'Sin especificar'}%0A%0A` +
+                      `Quedo atento a su respuesta. ¡Gracias!`;
+
+      window.open(`https://wa.me/573022123031?text=${mensaje}`, '_blank');
+    }
+
+    actualizarCotizacion();
+  </script>
+</body>
+</html>
